@@ -2,7 +2,7 @@
 
 Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 
-### 2020년 
+## 2020년 
 
 - [2020 Practice_task](./Problems&Input_data/문제.pdf)    
 [a_example_input](./Problems&Input_data/a_example.in)    
@@ -11,7 +11,7 @@ Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 [d_quite_big_input](./Problems&Input_data/d_quite_big.in)  
 [e_also_big_input](./Problems&Input_data/e_also_big.in) 
 
-### 2019년 기출
+## 2019년 기출
 
 - [2019 Qualification_task](./Problems&Input_data/hashcode2019_qualification_task.pdf)    
 [a_example_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/a_example.txt)    
@@ -29,7 +29,7 @@ Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 [f_big_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/f_big.in)
 
 
-### 2018년 기출
+## 2018년 기출
 
 - [2018 Qualification_task](./Problems&Input_data/hashcode2018_qualification_task.pdf)  
 [a_example_input](./Problems&Input_data/qualification_round_2018.in/a_example.in)  
@@ -46,7 +46,7 @@ Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 [e_precise_fit_input](./Problems&Input_data/final_round_2018.in/e_precies_fit.in)  
 [f_different_footprints_input](./Problems&Input_data/final_round_2018.in/f_different_footprints.in)
 
-### 2017년 기출
+## 2017년 기출
 
 - [2017 Qualification_task](./Problems&Input_data/hashcode2017_qualification_task.pdf)   
 [kittens_input](./Problems&Input_data/qualification_round_2017.in/qualification_round_2017.in/kittens.in)  
