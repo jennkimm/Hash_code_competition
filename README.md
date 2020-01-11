@@ -14,19 +14,19 @@ Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 ### 2019년 기출
 
 - [2019 Qualification_task](./Problems&Input_data/hashcode2019_qualification_task.pdf)    
-[a_example_input](./Problems&Input_data/qualification_round_2019.in/a_example.txt)    
-[b_lovely_landscapes_input](./Problems&Input_data/qualification_round_2019.in/b_lovely_landscapes.txt)  
-[c_memorable_moments_input](./Problems&Input_data/qualification_round_2019.in/c_memorable_moments.txt)  
-[d_pet_pictures_input](./Problems&Input_data/qualification_round_2019.in/d_pet_pictures.txt)  
-[e_shiny_selfies_input](./Problems&Input_data/qualification_round_2019.in/e_shiny_selfies.txt)
+[a_example_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/a_example.txt)    
+[b_lovely_landscapes_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/b_lovely_landscapes.txt)  
+[c_memorable_moments_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/c_memorable_moments.txt)  
+[d_pet_pictures_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/d_pet_pictures.txt)  
+[e_shiny_selfies_input](./Problems&Input_data/qualification_round_2019.in/qualification_round_2019.in/e_shiny_selfies.txt)
 
 - [2019 Final_task](./Problems&Input_data/hashcode2019_final_task.pdf)
-[a_example_input](./Problems&Input_data/final_round_2019.in/a_example.txt)  
-[b_narrow_input](./Problems&Input_data/final_round_2019.in/b_narrow.in)  
-[c_urgent_input](./Problems&Input_data/final_round_2019.in/c_urgent.in)  
-[d_typical_input](./Problems&Input_data/final_round_2019.in/d_typical.in)  
-[e_intriguing_input](./Problems&Input_data/final_round_2019.in/e_intriguing.in)
-[f_big_input](./Problems&Input_data/final_round_2019.in/f_big.in)
+[a_example_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/a_example.txt)  
+[b_narrow_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/b_narrow.in)  
+[c_urgent_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/c_urgent.in)  
+[d_typical_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/d_typical.in)  
+[e_intriguing_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/e_intriguing.in)  
+[f_big_input](./Problems&Input_data/final_round_2019.in/final_round_2019.in/f_big.in)
 
 
 ### 2018년 기출
@@ -49,10 +49,10 @@ Google Hash Code Competition을 준비하기 위한 저장소 입니다.
 ### 2017년 기출
 
 - [2017 Qualification_task](./Problems&Input_data/hashcode2017_qualification_task.pdf)   
-[kittens_input](./Problems&Input_data/qualification_round_2017.in/kittens.in)  
-[me_at_the_zoo_input](./Problems&Input_data/qualification_round_2017.in/me_at_the_zoo.in)   
-[trending_today_input](./Problems&Input_data/qualification_round_2017.in/trending_today.in)   
-[videos_worth_spreading_input](./Problems&Input_data/qualification_round_2017.in/videos_worth_spreading.in)   
+[kittens_input](./Problems&Input_data/qualification_round_2017.in/qualification_round_2017.in/kittens.in)  
+[me_at_the_zoo_input](./Problems&Input_data/qualification_round_2017.in/qualification_round_2017.in/me_at_the_zoo.in)   
+[trending_today_input](./Problems&Input_data/qualification_round_2017.in/qualification_round_2017.in/trending_today.in)   
+[videos_worth_spreading_input](./Problems&Input_data/qualification_round_2017.in/qualification_round_2017.in/videos_worth_spreading.in)   
 
 - [2017 Final_task](./Problems&Input_data/hashcode2017_final_task.pdf)   
 [charleston_road_input](./Problems&Input_data/final_round_2017.in/charleston_road.in)   
