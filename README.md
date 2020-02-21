@@ -1,6 +1,9 @@
 # Hash_code_competition
 
-Google Hash Code Competitionì„ ì¤€ë¹„í•˜ê¸° ìœ„í•œ ì €ì¥ì†Œ ì…ë‹ˆë‹¤.
+2020³â Qualification Round °á°ú:
+ÇÑ±¹ 46µî, Àü¼¼°è 3555µî
+<img src="/Problems&Input_data/ÇØ½ÃÄÚµåÇÑ±¹µî¼ö.png">
+<img src="/Problems&Input_data/ÇØ½ÃÄÚµåÀüÃ¼µî¼ö.png">
 
 ## 2020ë…„ 
 
