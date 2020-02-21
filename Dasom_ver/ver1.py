@@ -100,7 +100,7 @@ print(count_lib)
 for lib in lib_list:
 
     left_days-=lib.signup_days;
-    if left_days=<0:
+    if left_days<=0:
         break;
     #total_max_ship=left_days*lib.max_ship
     scan_num=min(left_days*lib.max_ship,lib.book_num)
