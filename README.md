@@ -1,13 +1,13 @@
 # Hash_code_competition
 
-2020³â Qualification Round °á°ú:
-ÇÑ±¹ 46µî, Àü¼¼°è 3555µî
-<img src="/Problems&Input_data/ÇØ½ÃÄÚµåÇÑ±¹µî¼ö.png">
-<img src="/Problems&Input_data/ÇØ½ÃÄÚµåÀüÃ¼µî¼ö.png">
+2020ë…„ Qualification Round ë“±ìˆ˜:
+í•œêµ­ 46ë“±, ì „ì„¸ê³„ 3555ë“±
+<img src="/Problems&Input_data/í•´ì‹œì½”ë“œí•œêµ­ë“±ìˆ˜.png">
+<img src="/Problems&Input_data/í•´ì‹œì½”ë“œì „ì²´ë“±ìˆ˜.png">
 
-## 2020ë…„ 
+## 2020ë…„
 
-- [2020 Practice_task](./Problems&Input_data/ë¬¸ì œ.pdf)    
+- [2020 Practice_task](./Problems&Input_data/Ã«Â¬Â¸Ã¬Â Å“.pdf)    
 [a_example_input](./Problems&Input_data/a_example.in)    
 [b_small_input](./Problems&Input_data/b_small.in)  
 [c_medium_input](./Problems&Input_data/c_medium.in)  
