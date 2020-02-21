@@ -1,8 +1,10 @@
 # Hash_code_competition
 
-2020년 Qualification Round 등수:
-한국 46등, 전세계 3555등
-<img src="/Problems&Input_data/해시코드한국등수.png">
+2020년 Qualification Round 결과:  
+
+한국 46등, 전세계 3555등  
+<img src="/Problems&Input_data/해시코드한국등수.png">  
+
 <img src="/Problems&Input_data/해시코드전체등수.png">
 
 ## 2020년
