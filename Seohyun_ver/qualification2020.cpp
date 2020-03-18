@@ -1,157 +1,108 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <algorithm>
 #include <vector>
+#include <string>
+#include <functional>
+#include <algorithm>
 
 #define MAX 100001
 
 using namespace std;
 
-int n, l, d;
-int b_score[MAX];
+int num_of_books, num_of_libs, total_days;
+int max_score = 0;
+
+void init(vector<int>& check, int t) {
+	for (int i = 0; i < num_of_books; i++) {
+		check[i] = t;
+	}
+}
 
 int main(void) {
-	cin >> n >> l >> d;
-
-	for (int i = 0; i < n; i++) {
-		cin >> b_score[n];
-	}
+	ifstream in("a_example.txt");
 	
-	int* b = new int[l];
-	int* signUp = new int[l];
-	int* ship = new int[l];
+	string line1;
+	getline(in, line1); // 각각 책 수, 도서관 수, 주어진 날 수
+	stringstream ss;
+	ss << line1;
+	ss >> num_of_books >> num_of_libs >> total_days;
 
-	vector<vector<int>> book;
+	string line2;
+	getline(in, line2);
+	stringstream ss2;
+	ss2 << line2;
+	vector<int> b(num_of_books + 1); // 책의 점수
 
-	for (int i = 0; i < l; i++) {
-		vector<int> v1(n);
-		book.push_back(v1);
+	for (int i = 0; i < num_of_books; i++) {
+		ss2 >> b[i];
 	}
 
-	for (int i = 0; i < l; i++) {
-		cin >> b[i] >> signUp[i] >> ship[i];
-		for (int j = 0; j < b[i]; j++) {
-			int index;
-			cin >> index;
-			book[i].push_back(index);
+	vector<int> book(num_of_libs + 1); //각 도서관이 갖고있는 책 갯수
+	vector<int> signup(num_of_libs + 1); //각 도서관이 등록하는데 걸리는 날짜
+	vector<int> scanning(num_of_libs + 1); //각 도서관이 하루에 스캔할 수 있는 날의 갯수
+
+	vector<int> check(num_of_books + 1); //전체 책 중에서, 스캔을 했는지 안했는지를 검사.
+	init(check ,-1); //-1 로 초기화
+	vector<vector<int>> have_book(num_of_libs + 1); //각 도서관이 갖고있는 책들 저장
+
+	vector<vector<pair<int, int>>> desc_v(num_of_libs + 1); //(책 점수, 책 번호) 내림차순대로 각 도서관에 저장.
+
+	for (int i = 0; i < num_of_libs; i++) {
+		string s1, s2;
+		getline(in, s1);
+		getline(in, s2);
+
+		stringstream ss3, ss4;
+
+		ss3 << s1;
+		ss4 << s2;
+
+		ss3 >> book[i] >> signup[i] >> scanning[i];
+
+		vector<int> v1(book[i] + 1);
+		have_book.push_back(v1);
+
+		vector<pair<int, int>> v2(book[i] + 1);
+		desc_v.push_back(v2);
+
+		for (int j = 0; j < book[i]; j++) {
+			int tmp;
+			ss4 >> tmp;
+
+			have_book[i].push_back(tmp);
+			check[have_book[i][j]] = 1; //각 도서관이 갖고 있는 책을 표시. 1 이면 어떤 도서관엔 있다는 뜻임.
+			desc_v[i].push_back(make_pair(b[have_book[i][j]], have_book[i][j]));
 		}
-		sort(book[i].begin(), book[i].end());
 	}
 
-	vector<vector<int>> score;
+	//순열을 통해 어떤 순서로 도서관을 스캔해야 가장 많은 책을 스캔 가능한지를 검사한다.
+	int* lib = new int[num_of_libs+1];
 
-	for (int i = 0; i<l; i++) {
-		vector<int> s(n);
-		score.push_back(s);
-
-		for (int j = 0; j < book[i].size(); j++) {
-			score[i][j] = b_score[j];
-		}
-
-		//점수 내림차순 정렬
-		sort(score[i].begin(), score[i].end(), greater<int>());
-
-		for (int j = 0; j < book[i].size(); j++) {
-			printf("%d ", score[i][j]);
-		}
-
+	for (int i = 0; i < num_of_libs; i++) {
+		lib[i] = i; // 오름차순 저장.
 	}
 
-	//스캔 했는지 체크
-	bool check_b[MAX] = { false, };
+	vector<int> order_of_libs; //스캔할 도서관 순서 저장
+	int max_num = 0;
 
-	//최대로 스캔할 수 있는 책 개수
-	int max_book = 0;
-
-	//얻을 수 있는 최대 점수
 	int max_score = 0;
 
-	//도서관 순서
-	vector<int> v(l);
-
-	//책 스캔 순서
-	//vector<int> scanned;
-
-	//최종적으로 스캔 할 도서관의 순서 
-	vector<int> order_lib(l);
-
-	for (int i = 0; i < l; i++) {
-		v[i] = i;
-	}
-
 	do {
-		//check_b[MAX] = { false, }; //초기화
-		int sum = 0;
-		int total = 0;
-		int remaining_day = d;
+		int score = 0; //도서관의 스코어 비교
+		int deadline = total_days;
+		int remaining = total_days;
 
-		for (int i = 0; i < l; i++) {
-			//printf("lib %d번: ", i);
-			int num = (remaining_day - signUp[v[i]]) * ship[v[i]];
-			
-			/*
-			for (int k = 0; k < num; k++) {
-				if (k < book[i].size()) {
-					if (check_b[book[i][k]] == false) {
-						total += score[i][k];
-						printf("score= %d ", score[i][k]);
-					}
-				}
-				else
-					break;
-			}
-			printf("\n");
-			*/
-			sum += num;
-			printf("num= %d ", num);
-			remaining_day -= signUp[v[i]];
+		int* num = new int[num_of_libs + 1];
+		for (int i = 0; i < num_of_libs; i++) {
+			num[i] = (remaining - signup[lib[i]]) * scanning[lib[i]];
+			remaining = remaining - signup[lib[i]];
+			cout << num[i] << "\n";
 		}
 
-		printf("sum= %d\n", sum);
-
-		
-		if (total > max_score) {
-			max_book = sum;
-
-			//도서관 사인업 순서 저장
-			for (int i = 0; i < l; i++) {
-				order_lib.pop_back();
-			}
-			for (int i = 0; i < l; i++) {
-				order_lib.push_back(v[l]);
-			}
-
-			max_score = total;
-		}
-
-		
-		if (sum > max_book) {
-			max_book = sum;
-			for (int i = 0; i < l; i++) {
-				order_lib.pop_back();
-			}
-			for (int i = 0; i < l; i++) {
-				order_lib.push_back(v[l]);
-			}
-		}
-		
-
-	} while (next_permutation(v.begin(), v.end()));
 
 
-
-
-
-
-	//ifstream input("a_example.txt");
-
-	//string line1;
-
-	//stringstream ss;
-
-
-	//ofstream outfile("a_example.out");
+	} while (next_permutation(lib, lib + num_of_libs));
 
 	return 0;
 }
